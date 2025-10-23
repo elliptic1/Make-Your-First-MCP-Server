@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catfacts-mcp-server"
+version = "0.1.0"
+description = "An MCP server demo that proxies Cat Facts API"
+authors = [
+    { name = "Make-Your-First-MCP-Server Demo" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.18.0",
+    "httpx>=0.28.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "respx>=0.21.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
