@@ -20,11 +20,11 @@
 4. **09:00 – API exploration (4 min)**
    - Switch to `catfacts.http` and run the request.
    - Show the JSON response and map fields to the tool implementation.
-5. **13:00 – Implement the HTTP client (4 min)**
-   - Open `src/catfacts_mcp/http_client.py` and explain the `CatFactsClient` class.
-   - Discuss error handling and the benefits of isolating API logic.
+5. **13:00 – Share the FastMCP lifespan pattern (4 min)**
+   - Stay in `src/catfacts_mcp/server.py` and show the `fetch_cat_fact` helper.
+   - Highlight how the lifespan context provides a shared `httpx.AsyncClient` to the tool.
 6. **17:00 – Wire up the server entrypoint (3 min)**
-   - Review `create_server()` and show how the lifespan manager keeps a shared client.
+   - Review `create_server()` and point out the `@app.tool()` registration.
    - Demonstrate running `python -m catfacts_mcp.server` to start the stdio server (use local machine, not sandbox).
 7. **20:00 – Run automated tests (3 min)**
    - Execute `pytest -q` from the IDE terminal.

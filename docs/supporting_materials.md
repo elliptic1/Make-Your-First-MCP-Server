@@ -11,7 +11,7 @@
 5. **IDE Setup Checklist**
    - Summarize key plugins and configuration steps.
 6. **Live Coding Milestones**
-   - Show the architecture diagram of `CatFactsClient`, `create_server`, and the tool.
+   - Show how `FastMCP`'s lifespan spins up a shared `httpx.AsyncClient` that feeds the `cat_fact` tool.
 7. **Testing & Troubleshooting**
    - Explain mocked tests, proxy configuration, and fallback strategies.
 8. **Next Steps**

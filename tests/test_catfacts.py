@@ -1,24 +1,31 @@
 from __future__ import annotations
 
 import asyncio
+import sys
+from pathlib import Path
 
-import respx
+import httpx
 from httpx import Response
 
-from catfacts_mcp.config import CatFactsSettings
-from catfacts_mcp.http_client import CatFactsClient
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
+
+from catfacts_mcp.server import CATFACTS_BASE_URL, CATFACTS_TIMEOUT, fetch_cat_fact
 
 
-def test_fetch_random_fact() -> None:
+def test_fetch_cat_fact() -> None:
     async def runner() -> None:
-        settings = CatFactsSettings(base_url="https://catfact.ninja")
-        client = CatFactsClient(settings)
+        async def handler(request: httpx.Request) -> Response:
+            assert request.url.path == "/fact"
+            return Response(200, json={"fact": "Cats purr."})
 
-        with respx.mock(base_url=settings.base_url) as router:
-            router.get("/fact").mock(return_value=Response(200, json={"fact": "Cats purr."}))
-            data = await client.fetch_random_fact()
+        transport = httpx.MockTransport(handler)
+        async with httpx.AsyncClient(
+            base_url=CATFACTS_BASE_URL,
+            timeout=CATFACTS_TIMEOUT,
+            transport=transport,
+        ) as client:
+            data = await fetch_cat_fact(client)
 
         assert data["fact"] == "Cats purr."
-        await client.close()
 
     asyncio.run(runner())
