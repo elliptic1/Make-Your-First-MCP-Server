@@ -16,7 +16,7 @@
    - Explain mocked tests, proxy configuration, and fallback strategies.
 8. **Next Steps**
    - Challenge prompts: add pagination, expose `/breeds`, integrate with Android app.
-   - Links to MCP specs, Cat Facts docs, and workshop repo.
+   - Links to MCP specs, Cat Facts docs, workshop repo, and GitHub's MCP Registry blog post for broader ecosystem context ([How to find, install, and manage MCP servers with the GitHub MCP Registry](https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/)).
 
 ## Speaker Notes & Tips
 - Emphasize how MCP allows Android developers to reuse tooling in IDEs and AI assistants.
