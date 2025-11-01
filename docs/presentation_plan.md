@@ -26,4 +26,4 @@
 3. **Wrap-Up (5 minutes)**
    - Recap what was built and the learning objectives.
    - Share troubleshooting tips and recommended follow-up exercises.
-   - Point attendees to slides, repo, and additional MCP resources.
+   - Point attendees to slides, repo, and additional MCP resources, including GitHub's overview of the MCP Registry for discovering and managing servers ([How to find, install, and manage MCP servers with the GitHub MCP Registry](https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/)).
